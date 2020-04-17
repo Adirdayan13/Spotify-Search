@@ -1,0 +1,23 @@
+<div class="back">
+    <button onclick="window.window.history.back();">Go back to artists</button>
+</div>
+<div class="container">
+    {{#each albums}}
+    <div class="card">
+        {{#each this.images}}
+        <div class="img">
+            <img style="width: 100%; border-radius: 20px;" src="{{this.this.url}}" alt="">
+            {{#if this.this.text}}
+                <p>{{this.this.text}}</p>
+            {{/if}}
+
+        </div>
+        {{/each }}
+        <div class="card-content">
+            <h3>{{this.name}}</h3>
+            <h5>Release year: {{this.release_year}}</h5>
+            <button type="submit"><a href="/tracks/{{this.id}}"> View Tracks</a></button>
+        </div>
+    </div>
+    {{/each }}
+</div>

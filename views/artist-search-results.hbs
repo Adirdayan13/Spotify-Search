@@ -1,0 +1,24 @@
+<div class="back">
+    <button onclick="window.location.href = '/';">Go back to search</button>
+</div>
+<div class="container">
+    {{#each results}}
+    <div class="card">
+        {{#each this.images}}
+        <div class="img-container">
+            <img class="img-container" src={{this.this.url}}>
+            {{#if this.this.text}}
+                <p>{{this.this.text}}</p>
+            {{/if}}
+        </div>
+        {{/each}}
+        <div class="card-content">
+            <a href={{this.external_urls.spotify}}><p>{{this.name}}</p></a>
+            <p>Followers: {{this.followers.total}}</p>
+            <button type="submit"><a href="/albums/{{this.id}}">View Albums</a></button>
+            <br>
+        </div>
+
+    </div>
+    {{/each}}
+</div>
